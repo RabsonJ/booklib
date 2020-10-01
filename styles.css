@@ -90,12 +90,6 @@ input:focus {
    border-radius: 3px;
 }
 
-.books-header {
-   display: flex;
-   justify-content: space-around;
-   align-items: center;
-}
-
 .remove-all {
    margin-bottom: 1rem;
    background-color: #f00;
@@ -113,6 +107,12 @@ input:focus {
    margin-bottom: 1rem;
    text-transform: uppercase;
    text-decoration: underline;
+}
+
+.books-header {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
 }
 
 #books-list {
@@ -173,4 +173,8 @@ input:focus {
    .form-inputs {
       flex-direction: column;
    }
+
+   .books-header {
+   justify-content: space-between;
+}
 }

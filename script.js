@@ -56,7 +56,7 @@ class UI {
 		setTimeout(function () {
 			location.reload();
 			document.querySelector('.alert').remove();
-		 }, 1000);
+		 }, 800);
 	}
 }
 
