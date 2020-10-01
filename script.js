@@ -63,8 +63,8 @@ class UI {
 			books.insertBefore(div, table);
 
 			setTimeout(function() {
-				location.reload();
 				document.querySelector('.alert').remove();
+				location.reload();
 			}, 800);
 		}
 	}
@@ -82,9 +82,9 @@ class AddToLib {
 		id++;
 		const book = new Book(title, author, pages, isRead, id);
 		library.push(book);
+		UI.showMessage('Book added successfuly', 'success');
 		Storage.addToStorage(library);
 
-		UI.showMessage('Book added successfuly', 'success');
 	}
 }
 
