@@ -70,11 +70,6 @@ class UI {
 	}
 }
 
-removeAll.addEventListener('click', () => {
-	localStorage.removeItem('books');
-	UI.showMessage('Deleting all books...', 'success-deleted');
-});
-
 class AddToLib {
 	static getInput(title, author, pages, isRead) {
 		const library = Storage.getFromStorage();
@@ -94,10 +89,17 @@ class Storage {
 
 	static getFromStorage() {
 		if (localStorage.getItem('books') === null) {
-			removeAll.style.display = 'none';
+			// Set button text
+			removeAll.innerHTML = 'No Books Yet';
 			return [];
 		} else {
-			removeAll.style.display = 'block';
+			// Change button text
+			removeAll.innerHTML = 'Delete All Books';
+			removeAll.addEventListener('click', () => {
+				localStorage.removeItem('books');
+				UI.showMessage('Deleting all books...', 'success-deleted');
+			});
+
 			return JSON.parse(localStorage.getItem('books'));
 		}
 	}
