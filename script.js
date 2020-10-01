@@ -1,5 +1,6 @@
 const addNewBook = document.querySelector('.new-book');
 const form = document.querySelector('#book-form');
+const banner = document.querySelector('.banner');
 const removeAll = document.querySelector('.remove-all');
 const tableBody = document.querySelector('.body');
 const table = document.querySelector('#books-list');
@@ -51,18 +52,27 @@ class UI {
 		const div = document.createElement('div');
 		div.className = `alert alert-${className}`;
 		div.appendChild(document.createTextNode(message));
-		books.insertBefore(div, table);
 
-		setTimeout(function () {
-			location.reload();
-			document.querySelector('.alert').remove();
-		 }, 800);
+		let timeOut;
+
+		if (className === 'error') {
+			banner.insertBefore(div, form);
+
+			setTimeout(() => document.querySelector('.alert').remove(), 2000);
+		} else {
+			books.insertBefore(div, table);
+
+			setTimeout(function() {
+				location.reload();
+				document.querySelector('.alert').remove();
+			}, 800);
+		}
 	}
 }
 
 removeAll.addEventListener('click', () => {
 	localStorage.removeItem('books');
-	location.reload();
+	UI.showMessage('All books deleted', 'success-deleted');
 });
 
 class AddToLib {
@@ -97,20 +107,20 @@ class Storage {
 		const library = Storage.getFromStorage();
 		const books = library.filter((book) => book.id !== parseInt(id));
 		Storage.addToStorage(books);
-		location.reload();
+		UI.showMessage('Book deleted successfuly', 'success-deleted');
 	}
 }
 
 form.addEventListener('submit', (e) => {
+	e.preventDefault();
+
 	const title = document.querySelector('#title').value;
 	const author = document.querySelector('#author').value;
 	const pages = document.querySelector('#pages').value;
 	const isRead = document.querySelector('#read').checked;
 
-	e.preventDefault();
-
 	if (title === '' || author === '' || pages === '') {
-		alert('Please fill out all the fields');
+		UI.showMessage('Please fill out all the fileds', 'error');
 	} else {
 		AddToLib.getInput(title, author, pages, isRead);
 		form.style.display = 'none';
