@@ -5,4 +5,4 @@ ___
 
 This was an interesting project to build because I learnt so much about JavaScript array methods. The biggest challenge was to get the **id** of the book the user has clicked on and then delete that book from local storage.
 
-Let me know what you think :simple_smile:
+Let me know what you think :smile:
