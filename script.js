@@ -72,7 +72,7 @@ class UI {
 
 removeAll.addEventListener('click', () => {
 	localStorage.removeItem('books');
-	UI.showMessage('All books deleted', 'success-deleted');
+	UI.showMessage('Deleting all books...', 'success-deleted');
 });
 
 class AddToLib {
@@ -82,9 +82,8 @@ class AddToLib {
 		id++;
 		const book = new Book(title, author, pages, isRead, id);
 		library.push(book);
-		UI.showMessage('Book added successfuly', 'success');
+		UI.showMessage('Adding new book...', 'success');
 		Storage.addToStorage(library);
-
 	}
 }
 
