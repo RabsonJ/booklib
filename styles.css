@@ -29,6 +29,7 @@ a {text-decoration: none;}
 .info {
 	margin-bottom: 2.5rem;
 	color: rgb(32, 202, 202);
+	text-transform: capitalize;
 }
 
 .container {

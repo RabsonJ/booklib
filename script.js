@@ -90,7 +90,7 @@ class Storage {
 	static getFromStorage() {
 		if (localStorage.getItem('books') === null) {
 			// Set button text
-			removeAll.innerHTML = 'No Books Yet';
+			removeAll.innerHTML = 'No Books';
 			return [];
 		} else {
 			// Change button text
