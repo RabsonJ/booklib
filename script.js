@@ -32,9 +32,7 @@ class UI {
 
 	static addToUi(book) {
 		const row = document.createElement('tr');
-		const isRead =
-			book.isRead ? 'Read' :
-			'Not Read';
+		const isRead = book.isRead ? 'Read' : 'Not Read';
 
 		row.innerHTML = `
          <td>${book.title}</td>
@@ -52,8 +50,6 @@ class UI {
 		const div = document.createElement('div');
 		div.className = `alert alert-${className}`;
 		div.appendChild(document.createTextNode(message));
-
-		let timeOut;
 
 		if (className === 'error') {
 			banner.insertBefore(div, form);
@@ -122,6 +118,8 @@ form.addEventListener('submit', (e) => {
 
 	if (title === '' || author === '' || pages === '') {
 		UI.showMessage('Please fill out all the fileds', 'error');
+	} else if(parseInt(pages) === 0) {
+		UI.showMessage('Pages cannot be zero', 'error');
 	} else {
 		AddToLib.getInput(title, author, pages, isRead);
 		form.style.display = 'none';

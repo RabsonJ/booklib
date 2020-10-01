@@ -4,7 +4,9 @@
 	box-sizing: border-box;
 }
 
-html {font-size: 65%;}
+html {
+	font-size: 65%;
+}
 
 body {
 	font-family: 'Roboto', sans-serif;
@@ -14,9 +16,13 @@ body {
 	padding: 0 3rem;
 }
 
-button {cursor: pointer;}
+button {
+	cursor: pointer;
+}
 
-a {text-decoration: none;}
+a {
+	text-decoration: none;
+}
 
 #heading {
 	font-size: clamp(.1rem, calc(5vw + 1rem), 5.5rem);
@@ -24,7 +30,9 @@ a {text-decoration: none;}
 	font-weight: 500;
 }
 
-#heading span {color: rgb(32, 202, 202);}
+#heading span {
+	color: rgb(32, 202, 202);
+}
 
 .info {
 	margin-bottom: 2.5rem;
@@ -45,7 +53,9 @@ a {text-decoration: none;}
 	align-items: center;
 }
 
-.form-inputs {display: flex;}
+.form-inputs {
+	display: flex;
+}
 
 #book-form {
 	display: flex;
@@ -61,7 +71,9 @@ label {
 	font-size: 1.2rem;
 }
 
-.input-group {margin: 0 2rem 2rem 0;}
+.input-group {
+	margin: 0 2rem 2rem 0;
+}
 
 input {
 	font-size: inherit;
@@ -69,7 +81,9 @@ input {
 	padding: .4rem .5rem;
 }
 
-input:focus {outline: none;}
+input:focus {
+	outline: none;
+}
 
 .btn {
 	padding: .8rem 1.5rem;
@@ -103,7 +117,9 @@ input:focus {outline: none;}
 	align-items: center;
 }
 
-#books-list {width: 100%;}
+#books-list {
+	width: 100%;
+}
 
 #books-list .header {
 	background-color: rgb(54, 56, 61);
@@ -111,13 +127,19 @@ input:focus {outline: none;}
 }
 
 #books-list .header tr th,
-#books-list .body tr td {padding: 1rem 0;}
+#books-list .body tr td {
+	padding: 1rem 0;
+}
 
-#books-list .body tr:nth-child(odd) {background-color: rgb(170, 177, 177);}
-#books-list .body tr:nth-child(even) {background-color: rgb(199, 201, 195);}
+#books-list .body tr:nth-child(odd) {
+	background-color: rgb(170, 177, 177);
+}
+#books-list .body tr:nth-child(even) {
+	background-color: rgb(199, 201, 195);
+}
 
 .delete {
-	background-color: red;
+	background-color: #f00;
 	padding: .7rem;
 	color: white;
 }
@@ -131,14 +153,22 @@ input:focus {outline: none;}
 	border-radius: 5px;
 }
 
-.alert-success {background-color: rgba(10, 153, 5, 0.719);}
+.alert-success {
+	background-color: rgba(10, 153, 5, 0.719);
+}
 
-.alert-success-deleted {background-color: orangered;}
+.alert-success-deleted {
+	background-color: orangered;
+}
 
-.alert-error {background-color: rgb(230, 26, 26);}
+.alert-error {
+	background-color: rgb(230, 26, 26);
+}
 
 /* UTILITIES */
-.hidden {display: none;}
+.hidden {
+	display: none;
+}
 
 @media screen and (max-width: 48.75em) {
 	body {
@@ -146,11 +176,19 @@ input:focus {outline: none;}
 		padding: 0 .2rem;
 	}
 
-	.alert {width: 90%;}
+	.alert {
+		width: 90%;
+	}
 
-	.delete {padding: .5rem;}
-   
-   .form-inputs {flex-direction: column;}
+	.delete {
+		padding: .5rem;
+	}
 
-	.books-header {justify-content: space-between;}
+	.form-inputs {
+		flex-direction: column;
+	}
+
+	.books-header {
+		justify-content: space-between;
+	}
 }
