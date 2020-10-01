@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   <div class="container">
+
+      <div class="banner">
+         <h1 id="heading">Book <span>Lib</span></h1>
+         <p class="info">Your Personal Books collection</p>
+
+         <form action="" id="book-form">
+            <div class="form-inputs">
+               <div class="input-group">
+                  <label for="#title">Title</label>
+                  <input type="text" id="title">
+               </div>
+               <div class="input-group">
+                  <label for="#author">Author</label>
+               <input type="text" id="author">
+               </div>
+               <div class="input-group">
+                  <label for="#pages">Number of Pages</label>
+                  <input type="number" id="pages">
+               </div>
+               <div class="input-group">
+                  <p>Read ?</p>
+                  <input type="checkbox" id="read">
+               </div>
+            </div>
+            <button type="submit" class="btn">Add Book</button>
+         </form>
+
+         <button class="btn new-book">Add New Book</button>
+      </div>
+
+
+      <!-- List of books -->
+      <div class="books">
+         <div class="books-header">
+            <h3>Your Books</h3>
+            <button class="btn remove-all">Remove All Books</button>
+         </div>
+         <table cellspacing="0" id="books-list">
+            <thead class="header">
+            <tr>
+               <th>Title</th>
+               <th>Author</th>
+               <th>Number of Pages</th>
+               <th>Read or Not</th>
+               <th>Remove</th>
+            </tr>
+            </thead>
+            <tbody class="body">
+            </tbody>
+         </table>
+      </div>
+
+   </div>
+   <script src="script.js"></script>
+</body>
+</html>
